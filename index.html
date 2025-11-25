@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">  
+    <script defer src="js/vue.js"></script>  
+    <script defer src="js/main.js"></script>
+    <title>Доска</title>
+</head>
+<body>
+    <header>
+        <h1>Kanban-доска</h1>
+    </header>
+    <main>
+        <section id="board" class="board">
+            <div class="column" id="planned">
+              <h2>Запланированные задачи</h2>
+              <div class="tasks" id="planned-tasks"></div>
+              <button id="add-task">+ Добавить задачу</button>
+            </div>
+            <div class="column" id="in-progress">
+              <h2>Задачи в работе</h2>
+              <div class="tasks" id="in-progress-tasks"></div>
+            </div>
+            <div class="column" id="testing">
+              <h2>Тестирование</h2>
+              <div class="tasks" id="testing-tasks"></div>
+            </div>
+            <div class="column" id="done">
+              <h2>Выполненные задачи</h2>
+              <div class="tasks" id="done-tasks"></div>
+            </div>
+          </section>     
+          
+          <dialog id="task-dialog">
+            <form id="task-form">
+                <h3 id="dialog-title">Новая задача</h3>
+                <label>
+                    Заголовок:
+                    <input type="text" id="task-title" required>
+                </label>
+                <label>
+                    Описание:
+                    <textarea id="task-desc" required></textarea>
+                </label>
+                <label>
+                    Дедлайн:
+                    <input type="date" id="task-deadline" required>
+                </label>
+                <input type="hidden" id="task-id">
+                <menu>
+                    <button type="submit">Сохранить</button>
+                    <button type="button" id="cancel-dialog">Отмена</button>
+                </menu>
+            </form>
+          </dialog>
+    </main>
+</body>
+</html>
