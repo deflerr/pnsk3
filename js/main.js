@@ -11,7 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let tasks = [];
 
     const openDialog = (task = null) => {
-        
+        if(task) {
+            document.getElementById('dialog-title').textContent = 'Редактировать задачу';
+            document.getElementById('task-title').value = task.title;
+            document.getElementById('task-desc').value = task.description;
+            document.getElementById('task-deadline').value = task.deadline;
+            document.getElementById('task-id').value = task.id;
+        }else{
+            document.getElementById('dialog-title').textContent = 'Новая задача';
+            taskForm.reset();
+            document.getElementById('task-id').value = '';
+        }
         taskDialog.showModal();
     };
 
